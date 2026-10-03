@@ -14,7 +14,21 @@ def calculate_grade(percentage):
         return "E"
     else:
         return "F"
-
+    def analyze_performance(percentage):
+    """Provide AI-style feedback based on the student's performance."""
+    
+    if percentage >= 90:
+        return "Excellent performance! Keep maintaining this level and aim for advanced learning."
+    elif percentage >= 80:
+        return "Very good performance! Focus on improving weaker areas to reach an excellent level."
+    elif percentage >= 70:
+        return "Good performance! With consistent practice, you can move to the next grade level."
+    elif percentage >= 60:
+        return "Fair performance. Identify your weak subjects and spend more time practicing them."
+    elif percentage >= 50:
+        return "You passed, but there is room for improvement. Create a regular study plan."
+    else:
+        return "Your performance needs improvement. Focus on basic concepts and practice regularly."
 
 def main():
     print("=" * 45)
@@ -66,7 +80,7 @@ def main():
 
     percentage = (total_marks / max_marks) * 100
     grade = calculate_grade(percentage)
-
+    feedback = analyze_performance(percentage)
     print("\n" + "=" * 45)
     print("              RESULT")
     print("=" * 45)
@@ -74,7 +88,7 @@ def main():
     print(f"Total Marks  : {total_marks:.2f} / {max_marks:.2f}")
     print(f"Percentage   : {percentage:.2f}%")
     print(f"Grade        : {grade}")
-
+    feedback = analyze_performance(percentage)
     if grade == "F":
         print("Status       : Fail")
     else:
